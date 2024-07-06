@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:task_manager/pressentation/screens/sign_in_screen.dart';
+import 'package:task_manager/pressentation/widgets/background_widget.dart';
+import '../widgets/aoop_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,36 +15,24 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    moveToSignin();
   }
 
-  Future<void> moveToHome_page() async {
-    await Future.delayed(Duration(seconds: 3));
+  Future<void> moveToSignin() async {
+    await Future.delayed(const Duration(seconds: 2));
     if (mounted) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => SignInScreen()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => const SignInScreen()));
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          SvgPicture.asset(
-            'assets/images/background.svg',
-            height: double.infinity,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          Center(
-            child: SvgPicture.asset(
-              'assets/images/logo.svg',
-              width: 120,
-              fit: BoxFit.scaleDown,
-            ),
-          )
-        ],
-      ),
+    return const Scaffold(
+      body: BackgroundWidget(
+          child: Center(
+        child: AppLogo(),
+      )),
     );
   }
 }

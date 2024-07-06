@@ -10,6 +10,7 @@ class TaskManager extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Task manager',
       home: SplashScreen(),
+
     );
   }
 }
