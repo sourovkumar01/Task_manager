@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/pressentation/screens/sign_in_screen.dart';
+import 'package:task_manager/pressentation/screens/auth/sign_in_screen.dart';
 import 'package:task_manager/pressentation/widgets/background_widget.dart';
-import '../widgets/aoop_logo.dart';
+import '../../widgets/aoop_logo.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
